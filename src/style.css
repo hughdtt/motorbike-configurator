@@ -32,22 +32,25 @@ a.github {
 .picker {
     position: absolute !important;
     top: 4rem;
-    left: 4rem;
-    width: 240px !important;
-    height: 240px !important;
+    left: 2rem;
+    /* width: 80vw !important;
+    height: 40vh !important; */
+    display: flex;
+    flex-flow: column wrap;
 }
 
 .picker h1 {
     color: white;
     text-transform: capitalize;
+    padding-left: 1.3rem;
 }
 
 .picker .button-container {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-left: 2.7rem;
-    padding-bottom: 2rem;
+    justify-content: start;
+    align-items: start;
+    padding-left: 1rem;
+    padding-bottom: 1.5rem;
 }
 
 .picker .button-container button {
@@ -71,6 +74,9 @@ a.github {
 }
 
 /* Custom layout */
+.custom-layout{
+    padding-left: 1.5rem;
+}
 .custom-layout .react-colorful {
     padding: 16px;
     border-radius: 12px;
@@ -101,30 +107,63 @@ a.github {
 }
 
 @media (max-width: 768px) {
-    a {
-      font-size: 16px; /* Smaller font size for screens under 768px */
-      right: 1rem;
-      bottom: 1rem;
-    }
-  
-    a.github {
-      bottom: 5rem;
+    .picker {
+        display: inline-grid;
+        grid-template-columns: 1fr 1fr;
     }
 
     .picker h1 {
-        font-size: 16px
-    }
-    
-    .picker .button-container {
-        padding-left: 0.5rem;
-        padding-bottom: 1rem;
+        font-size: 24px;
+        grid-column: 1 / span 2;
+        grid-row: 1 / span 1;
     }
 
-    .picker .button-container button{
-        font-size: 12px;
+    .picker .button-container{
+        grid-column: 1 / span 1;
+        grid-row: 1 / span 1;
+        padding-top: 4rem;
     }
 
     .picker .custom-layout{
-        
+        grid-column: 2 / span 1;
+        grid-row: 1 / span 1;
+        padding-left: 4rem;
+    }
+
+    a {
+        display: none;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .picker {
+        display: inline-grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.75fr 1fr;
+    }
+
+    .picker h1 {
+        font-size: 24px;
+        grid-column: 1 / span 1;
+        grid-row: 1 / span 1;
+        padding-bottom:0;
+    }
+
+    .picker .button-container{
+        grid-column: 1 / span 1;
+        grid-row: 1 / span 1;
+        padding-top: 4rem;
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
+
+    .picker .custom-layout{
+        grid-column: 1 / span 1;
+        grid-row: 2 / span 1;
+        padding-left: 1.5rem;
+    }
+
+    a {
+        display: none;
     }
   }

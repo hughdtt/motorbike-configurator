@@ -1,5 +1,5 @@
 import { Canvas } from '@react-three/fiber'
-import { OrbitControls, useGLTF, Stage, Loader } from '@react-three/drei'
+import { OrbitControls, useGLTF, Stage} from '@react-three/drei'
 import { HexColorPicker } from "react-colorful"
 import { proxy, useSnapshot } from "valtio"
 import * as THREE from 'three'
@@ -62,7 +62,6 @@ function Motorbike(props) {
   );
 }
 
-// Set state of what color to change.
 function Picker() {
   const snap = useSnapshot(state)
   return (
@@ -100,9 +99,9 @@ function App() {
         </Stage>
         <OrbitControls minPolarAngle={Math.PI / 2} maxPolarAngle={Math.PI / 2} autoRotate autoRotateSpeed={0.3} enableZoom={false} enablePan={false} />
       </Canvas>
+      <Picker />
       <a href="https://github.com/hughdtt" className="github" target="_blank">Github</a><br />
       <a href="https://poly.pizza/m/dse64pqMKAR" target="_blank">Motorcycle by Poly by Google [CC-BY] via Poly Pizza</a>
-      <Picker />
     </>
   )
 }
