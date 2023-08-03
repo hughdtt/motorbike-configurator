@@ -62,7 +62,7 @@ function Motorbike(props) {
   );
 }
 
-// Set state of what color to change
+// Set state of what color to change.
 function Picker() {
   const snap = useSnapshot(state)
   return (
