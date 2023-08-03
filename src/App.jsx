@@ -19,7 +19,7 @@ const state = proxy({
 
 function Motorbike(props) {
   const snap = useSnapshot(state)
-  const { nodes, materials } = useGLTF("/Motorcycle-Seperated.glb");
+  const { nodes, materials } = useGLTF("./Motorcycle-Seperated.glb");
   return (
     <group {...props} dispose={null}>
       <mesh
