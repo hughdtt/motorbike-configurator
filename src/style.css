@@ -47,6 +47,7 @@ a.github {
 
 .picker .button-container {
     display: flex;
+    flex-flow: row wrap;
     justify-content: start;
     align-items: start;
     padding-left: 1rem;
@@ -108,75 +109,55 @@ a.github {
 
 @media (max-width: 414px) {
     .picker {
-        top: 2rem !important;
+        top: 5px !important;
+        left: 5px !important;
         display: inline-grid;
-        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-rows: 105px 1fr;
     }
 
     .picker h1 {
-        font-size: 24px;
+        font-size: 18px;
         grid-column: 1 / span 1;
         grid-row: 1 / span 1;
-        padding-top: 2.5rem;
+        padding-top: 1rem;
     }
 
     .picker .button-container{
         grid-column: 1 / span 1;
         grid-row: 1 / span 1;
-        padding-top: 6rem;
+        padding-top: 3.5rem;
     }
 
+    .picker .button-container button{
+        font-size: 12px;
+    }
+
+    .custom-layout{
+        padding-left: 1.5rem !important;
+    }
+
+    .react-colorful{
+        height: 125px !important;
+    }
     .picker .custom-layout{
         grid-column: 1 / span 1;
-        grid-row: 3 / span 1;
-        padding-left: 3.8rem;
-        padding-top: 0.5rem;
+        grid-row: 2 / span 1;
+    }
+
+    .custom-layout .react-colorful__saturation {
+        border-radius: 5px;
+        border-bottom: none;
     }
 
     a {
         display: none;
     }
   }
-
-  @media only screen and (max-width: 414px) and (min-width: 376px) {
-    .picker {
-        top: 2rem !important;
-        display: inline-grid;
-        grid-template-rows: 120px 120px 1fr 1fr ;
-    }
-
-    .picker h1 {
-        font-size: 24px;
-        grid-column: 1 / span 1;
-        grid-row: 2 / span 1;
-        padding-top: 2.5rem;
-    }
-
-    .picker .button-container{
-        grid-column: 1 / span 1;
-        grid-row: 2 / span 1;
-        padding-top: 6rem;
-
-    }
-
-    .picker .custom-layout{
-        grid-column: 1 / span 1;
-        grid-row: 4 / span 1;
-        padding-left: 3.8rem;
-        padding-top: 3rem;
-    }
-
-    a {
-        display: none;
-    }
-  }
-
 
  @media only screen and (max-width: 1024px) and (min-width: 667px) {
     .picker {
         top: 1rem !important;
         display: inline-grid;
-        grid-template-columns: 1fr;
         grid-template-rows: 0.5fr 1fr;
     }
 
@@ -192,10 +173,11 @@ a.github {
         grid-row: 1 / span 1;
         padding-top: 2rem;
         padding-bottom: 0 !important;
+        width: 180px !important;
     }
 
     .picker .button-container button{
-        font-size: 12px;
+        font-size: 10px;
     }
 
     .picker .custom-layout{
@@ -204,29 +186,23 @@ a.github {
         padding-left: 1.5rem;
     }
 
-    .custom-layout .react-colorful {
-        padding: 8px;
-        border-radius: 12px;
-        background: #33333a;
-        box-shadow: 0 6px 12px #999;
+    .custom-layout{
+        padding-left: 1.5rem !important;
+        padding-top: 5px;
     }
-    
+
+    .react-colorful{
+        width: 125px !important;
+        height: 125px !important;
+    }
+    .picker .custom-layout{
+        grid-column: 1 / span 1;
+        grid-row: 2 / span 1;
+    }
+
     .custom-layout .react-colorful__saturation {
-        margin: 50px 30px;
         border-radius: 5px;
         border-bottom: none;
-    }
-
-    .custom-layout .react-colorful__hue,
-    .custom-layout .react-colorful__alpha {
-        height: 10px !important;
-        border-radius: 5px;
-    }
-
-    .custom-layout .react-colorful__hue-pointer,
-    .custom-layout .react-colorful__alpha-pointer {
-        width: 15px !important;
-        height: 15px !important;
     }
 
     a {
