@@ -1,5 +1,6 @@
 import { Canvas } from '@react-three/fiber'
-import { OrbitControls, useGLTF, Stage} from '@react-three/drei'
+import { Suspense } from 'react'
+import { OrbitControls, useGLTF, Stage, Loader} from '@react-three/drei'
 import { HexColorPicker } from "react-colorful"
 import { proxy, useSnapshot } from "valtio"
 import * as THREE from 'three'
@@ -66,7 +67,7 @@ function Picker() {
   const snap = useSnapshot(state)
   return (
     <div className="picker">
-      <h1>Pick colour: {snap.current}</h1>
+      <h1>Colour: {snap.current}</h1>
       <div className="button-container">
         <button onClick={() => { state.current = 'main' }}>Main</button>
         <button onClick={() => { state.current = 'secondary' }}>Secondary</button>
@@ -89,6 +90,7 @@ function App() {
           position: [-4, 0, 3]
         }}
       >
+        <Suspense fallback={null}>
         <Stage
           preset="rembrandt"
           intensity={4}
@@ -98,7 +100,10 @@ function App() {
           <Motorbike scale={0.02} />
         </Stage>
         <OrbitControls minPolarAngle={Math.PI / 2} maxPolarAngle={Math.PI / 2} autoRotate autoRotateSpeed={0.3} enableZoom={false} enablePan={false} />
+        </Suspense>
+        
       </Canvas>
+      <Loader />
       <Picker />
       <a href="https://github.com/hughdtt" className="github" target="_blank">Github</a><br />
       <a href="https://poly.pizza/m/dse64pqMKAR" target="_blank">Motorcycle by Poly by Google [CC-BY] via Poly Pizza</a>

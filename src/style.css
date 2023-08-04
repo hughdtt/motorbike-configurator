@@ -106,28 +106,31 @@ a.github {
     height: 20px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 414px) {
     .picker {
+        top: 2rem !important;
         display: inline-grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
     }
 
     .picker h1 {
         font-size: 24px;
-        grid-column: 1 / span 2;
+        grid-column: 1 / span 1;
         grid-row: 1 / span 1;
+        padding-top: 2.5rem;
     }
 
     .picker .button-container{
         grid-column: 1 / span 1;
         grid-row: 1 / span 1;
-        padding-top: 4rem;
+        padding-top: 6rem;
     }
 
     .picker .custom-layout{
-        grid-column: 2 / span 1;
-        grid-row: 1 / span 1;
-        padding-left: 4rem;
+        grid-column: 1 / span 1;
+        grid-row: 3 / span 1;
+        padding-left: 3.8rem;
+        padding-top: 0.5rem;
     }
 
     a {
@@ -135,15 +138,50 @@ a.github {
     }
   }
 
-  @media (max-width: 768px) {
+  @media only screen and (max-width: 414px) and (min-width: 376px) {
     .picker {
+        top: 2rem !important;
         display: inline-grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: 0.75fr 1fr;
+        grid-template-rows: 120px 120px 1fr 1fr ;
     }
 
     .picker h1 {
         font-size: 24px;
+        grid-column: 1 / span 1;
+        grid-row: 2 / span 1;
+        padding-top: 2.5rem;
+    }
+
+    .picker .button-container{
+        grid-column: 1 / span 1;
+        grid-row: 2 / span 1;
+        padding-top: 6rem;
+
+    }
+
+    .picker .custom-layout{
+        grid-column: 1 / span 1;
+        grid-row: 4 / span 1;
+        padding-left: 3.8rem;
+        padding-top: 3rem;
+    }
+
+    a {
+        display: none;
+    }
+  }
+
+
+ @media only screen and (max-width: 1024px) and (min-width: 667px) {
+    .picker {
+        top: 1rem !important;
+        display: inline-grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.5fr 1fr;
+    }
+
+    .picker h1 {
+        font-size: 16px;
         grid-column: 1 / span 1;
         grid-row: 1 / span 1;
         padding-bottom:0;
@@ -152,9 +190,12 @@ a.github {
     .picker .button-container{
         grid-column: 1 / span 1;
         grid-row: 1 / span 1;
-        padding-top: 4rem;
-        padding-bottom: 0;
-        margin-bottom: 0;
+        padding-top: 2rem;
+        padding-bottom: 0 !important;
+    }
+
+    .picker .button-container button{
+        font-size: 12px;
     }
 
     .picker .custom-layout{
@@ -163,7 +204,35 @@ a.github {
         padding-left: 1.5rem;
     }
 
+    .custom-layout .react-colorful {
+        padding: 8px;
+        border-radius: 12px;
+        background: #33333a;
+        box-shadow: 0 6px 12px #999;
+    }
+    
+    .custom-layout .react-colorful__saturation {
+        margin: 50px 30px;
+        border-radius: 5px;
+        border-bottom: none;
+    }
+
+    .custom-layout .react-colorful__hue,
+    .custom-layout .react-colorful__alpha {
+        height: 10px !important;
+        border-radius: 5px;
+    }
+
+    .custom-layout .react-colorful__hue-pointer,
+    .custom-layout .react-colorful__alpha-pointer {
+        width: 15px !important;
+        height: 15px !important;
+    }
+
     a {
         display: none;
     }
   }
+
+
+
